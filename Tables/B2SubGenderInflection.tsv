@@ -48,7 +48,7 @@ capacità	Feminin	capacità
 capitale	Feminin	capitali
 carabiniere	Maskulin	carabinieri
 carattere	Maskulin	caratteri
-carcere	Maskulin	carceri(F)
+carcere	Feminin	carceri
 carriera	Feminin	carriere
 caso	Maskulin	casi
 certificato	Maskulin	certificati
@@ -79,7 +79,7 @@ convivente	Maskulin,Feminin	conviventi
 coraggio	Maskulin	/
 corrente	Feminin	correnti
 cortesia	Feminin	cortesie
-criminale	Maskulin	criminali
+criminale	Maskulin,Feminin	criminali
 crisi	Feminin	crisi
 cronaca	Feminin	cronache
 cura	Feminin	cure
@@ -141,7 +141,7 @@ immobile	Maskulin	immobili
 importanza	Feminin	importanze
 impresa	Feminin	imprese
 impressione	Feminin	impressioni
-infanzia	Feminin	/
+infanzia	Feminin	infanzie
 inquilina	Feminin	inquiline
 inquilino	Maskulin	inquilini
 inquinamento	Maskulin	inquinamenti
@@ -173,7 +173,7 @@ mittente	Maskulin,Feminin	mittenti
 movimento	Maskulin	movimenti
 multa	Feminin	multe
 municipio	Maskulin	municipi
-muro	Maskulin	muri,mura(F)
+muro	Maskulin	muri(M),mura(F)
 mutuo	Maskulin	mutui
 nemico	Maskulin	nemici
 omicidio	Maskulin	omicidi
