@@ -116,7 +116,7 @@ etto	Maskulin	etti
 faccia	Feminin	facce
 facoltà	Feminin	facoltà
 fattoria	Feminin	fattorie
-febbre	Maskulin	febbri
+febbre	Feminin	febbri
 ferro	Maskulin	ferri
 fetta	Feminin	fette
 fiammifero	Maskulin	fiammiferi
@@ -173,7 +173,7 @@ lavandino	Maskulin	lavandini
 lavastoviglie	Feminin	lavastoviglie
 lavatrice	Feminin	lavatrici
 legno	Maskulin	legni
-lenzuolo	Maskulin	lenzuoli
+lenzuolo	Maskulin	lenzuoli(M),lenzuola(F)
 libreria	Feminin	librerie
 litro	Maskulin	litri
 livello	Maskulin	livelli
@@ -183,7 +183,7 @@ luogo	Maskulin	luoghi
 maiale	Maskulin	maiali
 mancia	Feminin	mance
 manica	Feminin	maniche
-mano	Maskulin	mani
+mano	Feminin	mani
 matematica	Feminin	matematiche
 materia	Feminin	materie
 matrimonio	Maskulin	matrimoni
@@ -234,9 +234,9 @@ paio	Maskulin	paia(F)
 palazzo	Maskulin	palazzi
 palestra	Feminin	palestre
 palla	Feminin	palle
-pallacanestro	Maskulin	/
+pallacanestro	Feminin	/
 panino	Maskulin	panini
-parente	Maskulin	parenti
+parente	Maskulin,Feminin	parenti
 parete	Feminin	pareti
 parte	Feminin	parti
 partenza	Feminin	partenze
@@ -270,9 +270,9 @@ posacenere	Maskulin	posacenere
 posata	Feminin	posate
 prato	Maskulin	prati
 primo	Maskulin	primi
-problema	Feminin	problemi(M)
+problema	Maskulin	problemi
 profumo	Maskulin	profumi
-programma	Feminin	programmi(M)
+programma	Maskulin	programmi
 prosciutto	Maskulin	prosciutti
 punto	Maskulin	punti
 raffreddore	Maskulin	raffreddori
