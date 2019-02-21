@@ -24,7 +24,7 @@ banconota	Feminin	banconote
 bilancia	Feminin	bilance
 bilocale	Maskulin	bilocali
 binario	Maskulin	binari
-calma	Feminin	calme
+calma	Feminin	/
 camion	Maskulin	camion
 campo	Maskulin	campi
 canale	Maskulin	canali
@@ -63,7 +63,7 @@ costruzione	Feminin	costruzioni
 cuore	Maskulin	cuori
 curriculum vitae	Maskulin	curricula vitae
 denaro	Maskulin	denari
-dentista	Maskulin	dentisti
+dentista	Maskulin,Feminin	dentisti,dentiste
 dialetto	Maskulin	dialetti
 diario	Maskulin	diari
 dieta	Feminin	diete
@@ -76,7 +76,7 @@ dispensa	Feminin	dispense
 documentario	Maskulin	documentari
 dolore	Maskulin	dolori
 duomo	Maskulin	duomi
-elettricista	Maskulin,Feminin	elettricisti
+elettricista	Maskulin,Feminin	elettricisti,elettriciste
 elicottero	Maskulin	elicotteri
 emergenza	Feminin	emergenze
 emozione	Feminin	emozioni
@@ -177,7 +177,7 @@ porto	Maskulin	porti
 possibilità	Feminin	possibilità
 postino	Maskulin	postini
 prefisso	Maskulin	prefissi
-preposizione	Maskulin	preposizioni
+preposizione	Feminin	preposizioni
 preside	Maskulin,Feminin	presidi
 previsione	Feminin	previsioni
 prezzemolo	Maskulin	prezzemoli
