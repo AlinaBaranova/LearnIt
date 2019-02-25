@@ -106,7 +106,7 @@ chiudere	Verb	A1
 ci	Pronominalpartikel	A1
 ciao	Interjektion	A1
 cibo	Substantiv	A1
-cin cin	Interjektion	A1
+cin-cin	Interjektion	A1
 cinema	Substantiv	A1
 città	Substantiv	A1
 classe	Substantiv	A1
@@ -421,7 +421,6 @@ sedia	Substantiv	A1
 segreteria	Substantiv	A1
 sempre	Adverb	A1
 senza	Präposition	A1
-senza	Adverb	A1
 sera	Substantiv	A1
 sete	Substantiv	A1
 settembre	Substantiv	A1
@@ -623,7 +622,6 @@ chilo	Substantiv	A2
 chilometro	Substantiv	A2
 ci	Pronomen	A2
 cielo	Substantiv	A2
-cin-cin	Interjektion	A2
 cioccolato	Substantiv	A2
 circa	Adverb	A2
 cognata	Substantiv	A2
@@ -930,7 +928,6 @@ pipa	Substantiv	A2
 piscina	Substantiv	A2
 pisello	Substantiv	A2
 plurale	Adjektiv	A2
-po'	Adverb	A2
 poi	Adverb	A2
 pollo	Substantiv	A2
 poltrona	Substantiv	A2
@@ -1278,7 +1275,7 @@ discesa	Substantiv	B1
 disoccupata	Adjektiv	B1
 disoccupata	Substantiv	B1
 disoccupato	Adjektiv	B1
-disuccupato	Substantiv	B1
+disoccupato	Substantiv	B1
 dispensa	Substantiv	B1
 disperare	Verb	B1
 distinto	Adjektiv	B1
@@ -1430,7 +1427,7 @@ naturale	Adjektiv	B1
 navigare	Verb	B1
 ne	Pronominalpartikel	B1
 né	Konjunktion	B1
-neanche	Adverb 	B1
+neanche	Adverb	B1
 neanche	Konjunktion	B1
 necessario	Adjektiv	B1
 negativo	Adjektiv	B1
@@ -1616,7 +1613,7 @@ spaventare	Verb	B1
 spaventoso	Adjektiv	B1
 speciale	Adjektiv	B1
 specialmente	Adverb	B1
-spessp	Adjektiv	B1
+spesso	Adjektiv	B1
 spettabile	Adjektiv	B1
 spicchio	Substantiv	B1
 spostare	Verb	B1
@@ -1889,7 +1886,6 @@ discorso	Substantiv	B2
 discussione	Substantiv	B2
 discutere	Verb	B2
 disgustoso	Adjektiv	B2
-disoccupato	Substantiv	B2
 distanza	Substantiv	B2
 disturbare	Verb	B2
 dividere	Verb	B2
@@ -1998,7 +1994,6 @@ litigare	Verb	B2
 logico	Adjektiv	B2
 lordo	Adjektiv	B2
 magari	Interjektion	B2
-magari	Konjunktion	B2
 mah	Interjektion	B2
 maiuscola	Substantiv	B2
 manager	Substantiv	B2
@@ -2031,8 +2026,6 @@ municipio	Substantiv	B2
 mura	Substantiv	B2
 muto	Adjektiv	B2
 mutuo	Substantiv	B2
-neanche	Adverb	B2
-nenache	Konjunktion	B2
 nemico	Adjektiv	B2
 nemico	Substantiv	B2
 nemmeno	Adverb	B2
@@ -2074,7 +2067,6 @@ personale	Adjektiv	B2
 personale	Substantiv	B2
 personalità	Substantiv	B2
 personalmente	Adverb	B2
-piecere	Verb	B2
 pietà	Substantiv	B2
 pistola	Substantiv	B2
 poiché	Konjunktion	B2
@@ -2088,8 +2080,6 @@ povertà	Substantiv	B2
 precedenza	Substantiv	B2
 prendersela	Verb	B2
 preoccupazione	Substantiv	B2
-Präpositionrare	Verb	B2
-Präpositionsizione	Substantiv	B2
 presentazione	Substantiv	B2
 presente	Adjektiv	B2
 presenza	Substantiv	B2
@@ -2207,7 +2197,6 @@ sparare	Verb	B2
 spazio	Substantiv	B2
 specializzarsi	Verb	B2
 specializzazione	Substantiv	B2
-spesso	Adjektiv	B2
 spiegarsi	Verb	B2
 statale	Adjektiv	B2
 stato	Substantiv	B2
@@ -2243,7 +2232,6 @@ trasformare	Verb	B2
 trattare	Verb	B2
 tratto	Substantiv	B2
 tribunale	Substantiv	B2
-tropp	Adverb	B2
 turismo	Substantiv	B2
 uccidere	Verb	B2
 uffa	Interjektion	B2
