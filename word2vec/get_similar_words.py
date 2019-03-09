@@ -57,6 +57,8 @@ def synonyms_for_words(words, f_output_table, f_output_similarity_scores):
 	sorted_out = 0
 	# words of open classes not found in model vocabulary
 	not_found = []
+	# words for which similar words have been already extracted (for homonyms of different parts of speech)
+	already_extracted = set()
 	# check how many similar words are needed to get five proper ones
 	n_similar_words = {}
 	# similar words and their similarity scores for all words
@@ -70,14 +72,17 @@ def synonyms_for_words(words, f_output_table, f_output_similarity_scores):
 			array = line.split("\t")
 			word_id = array[0]
 			word = array[1]
+			word_mod = word.lower().replace("’", "'")
 			pos = array[2]
 			count += 1
 			# check if word is noun, adjective, verb or adverb
 			if pos in open_pos:
 				# check if word in model's vocabulary
-				if word in word_vectors.vocab:
+				if word_mod in word_vectors.vocab:
 					# check if word not already in output (for homonyms of different parts of speech)
-					if word_id not in output.keys():
+					if word not in already_extracted:
+						# add word to set of words for which similar words have been already extracted
+						already_extracted.add(word)
 						# array for words similar to the current one
 						similar_words_array = []
 						# dictionary for similar words and similarity scores
@@ -87,7 +92,7 @@ def synonyms_for_words(words, f_output_table, f_output_similarity_scores):
 						new_n = 10
 						while new_n > 0:
 							n_total = old_n + new_n
-							similar_words = model.most_similar(positive=[word], topn=n_total)
+							similar_words = model.most_similar(positive=[word_mod], topn=n_total)
 
 							similar_words_to_check = similar_words[-new_n:]
 
@@ -111,7 +116,7 @@ def synonyms_for_words(words, f_output_table, f_output_similarity_scores):
 									if len(info_array) == 3:
 										lemma = info_array[2]
 										# check if lemma is the same as word
-										if lemma != word:
+										if lemma != word_mod:
 											# check if lemma is in combined list of lemmas
 											if lemma in lemmas_joined:
 												# check if word not in array of similar words
@@ -128,7 +133,11 @@ def synonyms_for_words(words, f_output_table, f_output_similarity_scores):
 
 						output[word_id] = similar_words_array[:5]
 						n_similar_words[word] = n_total
-						similarity_scores_all[word_id] = similarity_scores
+
+						new_similarity_scores = {}
+						for word in output[word_id]:
+							new_similarity_scores[word] = similarity_scores[word]
+						similarity_scores_all[word_id] = new_similarity_scores
 
 				else:
 					# words of open classes which are not found in model vocabulary
@@ -149,9 +158,9 @@ def synonyms_for_words(words, f_output_table, f_output_similarity_scores):
 
 	with open("n_similar_words.tsv", "w") as file:
 		for word in n_similar_words:
-			file.write(word + "\t" + str(n_similar_words[word]))
+			file.write(word + "\t" + str(n_similar_words[word]) + "\n")
 
-	with open("f_output_similarity_scores", "w") as file:
+	with open(f_output_similarity_scores, "w") as file:
 		json.dump(similarity_scores_all, file)
 
 synonyms_for_words("../Tables/A1-B2_with-ids.tsv", "../Tables/similar_words_for_all_words.tsv", "similarity_scores_for_all_words.json")
