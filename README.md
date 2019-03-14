@@ -11,3 +11,7 @@ Links (use them instead the ones in the guide):
 Important notes not mentioned in the JWKTL Getting Started:
 * create a Maven project
 * add JWKTL dependency to your pom.xml file: https://dkpro.github.io/dkpro-jwktl/
+
+## TreeTagger
+* Follow the guide on http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ to download TreeTagger
+* Install package *treetaggerwrapper* for Python
