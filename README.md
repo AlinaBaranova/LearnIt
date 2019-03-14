@@ -15,3 +15,7 @@ Important notes not mentioned in the JWKTL Getting Started:
 ## TreeTagger
 * Follow the guide on http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ to download TreeTagger
 * Install package *treetaggerwrapper* for Python
+
+## Word2Vec
+* Get word2vec model: http://hlt.isti.cnr.it/wordembeddings/ (word vectors trained with skipgram's word2vec)
+* Install package *gensim* for Python
