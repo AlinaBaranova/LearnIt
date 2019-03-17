@@ -143,9 +143,7 @@
 143	in der Bierfarbe hell	57
 144	das Bier	58
 145	blau	59
-146 die Tasche, der Beutel  60
-[a] die Tragetasche, die Handtasche 60
-[b] der Geldbeutel, die Geldbörse	60
+146	die Tasche, der Beutel [a] die Tragetasche, die Handtasche [b] der Geldbeutel, die Geldbörse	60
 147	Finanzwesen: die Börse	60
 148	das Geld	60
 149	Anatomie: der Sack, der Beutel	60
@@ -338,7 +336,7 @@
 336	hinten	141
 337	schwierig, schwer, heikel	142
 338	kaum, schwerlich	142
-339 die Dusche: Bestandteil eines typischen modernen Badezimmers, das der schnellen, vollständigen Körperpflege und der Hygiene durch 'Beregnung' mit meist warmem Wasser dient 144
+339	die Dusche: Bestandteil eines typischen modernen Badezimmers, das der schnellen, vollständigen Körperpflege und der Hygiene durch "Beregnung" mit meist warmem Wasser dient	144
 340	der Duschraum	144
 341	die Dachrinne	144
 342	Medizin: die Armschiene, die Beinschiene	144
@@ -620,8 +618,7 @@
 618	das Lager	246
 619	die Ehe	246
 620	Buch: die Lektion, der Abschnitt	247
-621	[a] Schule: der Unterricht, die Unterrichtsstunde
-[b] Universität: die Vorlesung	247
+621	[a] Schule: der Unterricht, die Unterrichtsstunde [b] Universität: die Vorlesung	247
 622	der Unterrichtsstoff	247
 623	die Lehre, die Lektion	247
 624	die Hausaufgabe	247
@@ -799,10 +796,7 @@
 796	das Paket	330
 797	übertragen, der Betrug	330
 798	der Vater	331
-799	zahlen, bezahlen
-[a] einzahlen, zahlen
-[b] auszahlen, zahlen
-[c] Steuern, Gebühren etc.: entrichten, zahlen, bezahlen	332
+799	zahlen, bezahlen [a] einzahlen, zahlen [b] auszahlen, zahlen [c] Steuern, Gebühren etc.: entrichten, zahlen, bezahlen	332
 800	ausgeben, spendieren	332
 801	bezahlen, belohnen	332
 802	Recht: abbüßen, verbüßen	332
@@ -1934,8 +1928,7 @@
 1928	Betttuch	802
 1929	frei	804
 1930	die Buchhandlung	805
-1931	Büchersammlung: die Bibliothek
-libreria ist nicht die Institution, in der Bücher oder sonstige Medien gelesen oder ausgeliehen werden können. Das italienische Wort dafür ist .	805
+1931	Büchersammlung: die Bibliothek libreria ist nicht die Institution, in der Bücher oder sonstige Medien gelesen oder ausgeliehen werden können. Das italienische Wort dafür ist .	805
 1932	das Bücherregal	805
 1933	der Bücherschrank	805
 1934	schlicht	806
@@ -2107,9 +2100,7 @@ libreria ist nicht die Institution, in der Bücher oder sonstige Medien gelesen 
 2100	Paar	887
 2101	ein paar, einige	887
 2102	der Palast	888
-2103	Architektur:
-[a] das Gebäude
-[b] das Wohnhaus, das Mietshaus	888
+2103	Architektur: [a] das Gebäude [b] das Wohnhaus, das Mietshaus	888
 2104	der Hof	888
 2105	Turnhalle	889
 2106	Fitnesscenter	889
@@ -2143,8 +2134,7 @@ libreria ist nicht die Institution, in der Bücher oder sonstige Medien gelesen 
 2134	Wirtschaft: die Buchführung	897
 2135	Wirtschaft: der Posten, die Partie	897
 2136	körperlich: vorübergehen, vorbeigehen	898
-2137	iSv. aufhören: vorbeigehen, vorübergehen
-[a] Schmerz: vergehen	898
+2137	iSv. aufhören: vorbeigehen, vorübergehen [a] Schmerz: vergehen	898
 2138	Transportmittel: vorbeifahren	898
 2139	vorbeikommen	898
 2140	vergehen, vorbeigehen	898
@@ -2153,9 +2143,7 @@ libreria ist nicht die Institution, in der Bücher oder sonstige Medien gelesen 
 2143	umziehen, verziehen	898
 2144	überliefern, eingehen	898
 2145	iSv. akzeptieren: durchgehen	898
-2146	[a] Schule: versetzt werden
-[b] aufsteigen, befördert werden
-[c] Gesetze etc.: verabschiedet werden	898
+2146	[a] Schule: versetzt werden [b] aufsteigen, befördert werden [c] Gesetze etc.: verabschiedet werden	898
 2147	Sport: passen, zuspielen, abgeben	898
 2148	überschreiten, überqueren	898
 2149	reichen, geben	898
@@ -2221,10 +2209,7 @@ libreria ist nicht die Institution, in der Bücher oder sonstige Medien gelesen 
 2209	die Birne	914
 2210	verlieren	915
 2211	lecken: undicht sein	915
-2212	verlieren
-[a] Flüssigkeit: auslaufen, auslaufen lassen, verlieren
-[b] Gas: ausströmen, ausströmen lassen
-[c] Blut: verlieren	915
+2212	verlieren [a] Flüssigkeit: auslaufen, auslaufen lassen, verlieren [b] Gas: ausströmen, ausströmen lassen [c] Blut: verlieren	915
 2213	verlegen	915
 2214	Zug etc.: versäumen, verpassen	915
 2215	Gelegenheit: verpassen	915
@@ -2443,8 +2428,7 @@ libreria ist nicht die Institution, in der Bücher oder sonstige Medien gelesen 
 2428	Mechanik: die Achse	982
 2429	Botanik: das Riedgras	982
 2430	eine bekannte italienische Dauerwurstsorte, die in vielfältigen Varianten hergestellt und durch spezielle Mikroorganismen fermentiert wird	983
-2431	der Tollpatsch
-der Zugluftstopper	983
+2431	der Tollpatsch der Zugluftstopper	983
 2432	Salon	986
 2433	Wohnzimmer	986
 2434	Couchgarnitur	986
@@ -3280,8 +3264,7 @@ der Zugluftstopper	983
 3264	ein Diplom erwerben	1381
 3265	ein Hochschulabschluss erwerben	1381
 3266	langsam, träg, träge	1382
-3267	Zoologie: der Löwe: Tier der Art der Katzen, das in Rudeln lebt und leicht an der Mähne des entsprechenden Männchens erkennbar ist
-Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
+3267	Zoologie: der Löwe: Tier der Art der Katzen, das in Rudeln lebt und leicht an der Mähne des entsprechenden Männchens erkennbar ist Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 3268	das Gymnasium	1384
 3269	liquide	1386
 3270	flüssig	1386
@@ -4177,10 +4160,7 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 4160	gefangen nehmen, (ein)fangen	1786
 4161	ledig	1789
 4162	das Zertifikat, das Zeugnis, die Bescheinigung, die Urkunde, der Schein, der Attest	1790
-4163	[a] sicher, gewiss
-[b] zweifellos
-[c] überzeugt
-[d] wahr	1791
+4163	[a] sicher, gewiss [b] zweifellos [c] überzeugt [d] wahr	1791
 4164	manche	1791
 4165	einige, ein paar	1791
 4166	blind	1795
@@ -4189,18 +4169,13 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 4169	der Berggipfel, der Gipfel	1797
 4170	der Baumwipfel, der Wipfel, die Krone	1797
 4171	das Ass, der Held, die Leuchte	1797
-4172	Zoologie:
-[a] der Schwanz
-[b] der Schweif	1801
+4172	Zoologie: [a] der Schwanz [b] der Schweif	1801
 4173	Frisur: der Pferdeschwanz	1801
 4174	die Schlange, die Menschenschlange, die Reihe	1801
-4175	Fahrzeug, Flugzeug: das Heck
-[a] Eisenbahn: vettura di coda: der Schlusswagen	1801
+4175	Fahrzeug, Flugzeug: das Heck [a] Eisenbahn: vettura di coda: der Schlusswagen	1801
 4176	Astronomie: der Schweif	1801
 4177	der Anhang	1801
-4178	Kleidung:
-[a] bei Männern: der Rockschoß
-[b] bei Frauen: die Schleppe	1801
+4178	Kleidung: [a] bei Männern: der Rockschoß [b] bei Frauen: die Schleppe	1801
 4179	pflücken, abpflücken	1802
 4180	ergreifen, packen	1802
 4181	überraschen, ertappen	1802
@@ -5235,11 +5210,6 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5210	etwas anderes	542
 5211	nichts anderes/mehr	542
 5212	noch etwas/mehr	542
-5213	andere	543
-5214	noch ein	543
-5215	weitere	543
-5216	letzt	543
-5217	nächst	543
 5218	Verwalter	1719
 5219	geschäftsführender Vorstand	1719
 5220	Administrator	1719
@@ -5278,13 +5248,6 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5253	welcher, welche, welches	98
 5254	was für eine	98
 5255	was für ein, wie	98
-5256	dass	618
-5257	so …, dass	618
-5258	weil, denn	618
-5259	damit	618
-5260	als	618
-5261	nichts als, nur	618
-5262	soweit, soviel	618
 5263	prost, prosit	109
 5264	das, dies	1798
 5265	uns	623
@@ -5314,7 +5277,6 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5289	deprimieren, entmutigen	1263
 5290	vergessen	674
 5291	arbeitslose	1275
-5292	Arbeitslose	1276
 5293	Doktortitel	1892
 5294	Promotion	1892
 5295	also, folglich, demnach	1287
@@ -5350,8 +5312,6 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5325	gleichzeitig	1837
 5326	Kopf hoch, keine Angst	1244
 5327	los	1244
-5328	vorne	136
-5329	davor	136
 5330	doch	697
 5331	los	1319
 5332	ihm	760
@@ -5377,9 +5337,9 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5352	introvertiert	1373
 5353	nutzlos, unnötig	784
 5354	vergeblich, sinnlos	784
-5355	jedoch, dagegen, hingegen	1374	
+5355	jedoch, dagegen, hingegen	1374
 5356	Arbeits-	1987
-5357	sie	803 
+5357	sie	803
 5358	logisch	1993
 5359	hm	1996
 5360	Großbuchstabe	1997
@@ -5398,13 +5358,7 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5373	Kleinbuchstabe	2015
 5374	klein, Klein-	2016
 5375	winzig (klein)	2016
-5376	Möbelstück, Möbel	837	
-5377	auch nicht	1429
-5378	nicht einmal	1429
-5379	überhaupt nicht	1429
-5380	gar nicht	1429
-5381	überhaupt kein	1429
-5382	gar kein	1429
+5376	Möbelstück, Möbel	837
 5383	auch nicht	1430
 5384	nicht einmal	1430
 5385	überhaupt nicht	1430
@@ -5412,21 +5366,12 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5387	überhaupt kein	1430
 5388	gar kein	1430
 5389	und nicht, auch nicht	1428
-5390	auch nicht	2030
-5391	nicht einmal	2030
-5392	überhaupt nicht	2030
-5393	gar nicht	2030
-5394	überhaupt kein	2030
-5395	gar kein	2030
 5396	auch nicht	2031
 5397	nicht einmal	2031
 5398	überhaupt nicht	2031
 5399	gar nicht	2031
-5400	überhaupt kein	2031	
+5400	überhaupt kein	2031
 5401	gar kein	2031
-5402	niemand	307
-5403	keiner, keine, keines	307	
-5404	jemand	307
 5405	kein, keine	1433
 5406	keiner, keine, keines	1433
 5407	jeglich, jede	1433
@@ -5441,7 +5386,6 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5416	Schein	2074
 5417	Police	2074
 5418	Pop	1493
-5419	Pop-	1494	
 5420	praktisch	1499
 5421	sich anvertrauen	2110
 5422	sich empfehlen	2110
@@ -5471,13 +5415,12 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5446	dich	477
 5447	dir	477
 5448	Zahlenlotto	1641
-5449	tortellino (mit Fleisch gefüllte, ringförmige Nudelart)	1093	
+5449	tortellino (mit Fleisch gefüllte, ringförmige Nudelart)	1093
 5450	traditionell	2228
 5451	konventionell	2228
 5452	dennoch, trotzdem	1655
 5453	Fernsehen, Fernseher	488
 5454	uff	2236
-5455	ein, eine (unbestimmter Artikel männlich)	490
 5456	veränderlich, wechselhaft	1665
 5457	unbeständig	1665
 5458	schwankend	1665
@@ -5499,10 +5442,6 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5474	gewöhnlich	2107
 5475	wann	388
 5476	manchmal	388
-5477	als	959
-5478	wenn	959
-5479	da, weil, wenn	959
-5480	während, obwohl	959
 5481	wie viel	390
 5482	wie lange	390
 5483	das, was	390
@@ -5511,7 +5450,6 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5486	wie	391
 5487	so viel … wie	391
 5488	so lange	391
-5489	danach, dann	1531
 5490	also, folglich, daher	1532
 5491	Verantwortliche, Beauftragte	2127
 5492	Schuldige	2127
@@ -5519,19 +5457,392 @@ Astrologie: der Löwe: Sternzeichen, das an die Form von [1] erinnert	1383
 5494	Gesundheit!	412
 5495	sich, sich selbst	2161
 5496	sowohl… als auch…	1596
-5497	sich	428	
+5497	sich	428
 5498	einander, sich (gegenseitig)	428
 5499	man	428
 5500	viel	1630
 5501	viele	1630
 5502	dich, dir	471
 5503	du	471
-5504	ein,eine (unbestimmter Artikel weiblich)	491
 5505	einer, eine, eines	2238
 5506	jemand	2238
-5507	ein,eine (unbestimmter Artikel männlich)	492	
-5508	einer, eine, eines	2239
-5509	jemand	2239
+5507	ein,eine (unbestimmter Artikel männlich)	492
 5510	violett	1122
 5511	euch	1121
 5512	Ihnen	1121
+5513	uns	106
+5514	hier, hierher, hierhin	106
+5515	da, dort, da-, dorthin	106
+5516	Lebenslauf	1257
+5517	Curriculum, Lehrplan	1257
+5518	auf etwas pfeifen	1934
+5519	jemandem Wurst sein	1934
+5520	Anzahlung	1138
+5521	jetzt	5
+5522	anbeten	1700
+5523	völlig	1703
+5524	Zuneigung	9
+5525	Liebe, Zärtlichkeit	9
+5526	damit	1706
+5527	Ferien auf dem Bauernhof	1710
+5528	sonst	1715
+5529	anderer	543
+5530	weiterer	543
+5531	noch	546
+5532	immer noch	546
+5533	annullieren	1724
+5534	für ungültig erklären	1724
+5535	rückgängig machen	1724
+5536	Handwerk	1733
+5537	trocknen, trocken werden	572
+5538	sich abtrocken, sich abwischen	572
+5539	rau	1161
+5540	herb	1161
+5541	sauer	1161
+5542	holprig	1161
+5543	völlig	1163
+5544	unbedingt	1163
+5545	Haltung	1747
+5546	Benehmen	1747
+5547	durch	1751
+5548	nass machen	1172
+5549	anfeuchten	1172
+5550	sprengen[Straße], besprengen	1172
+5551	nass werden	1173
+5552	baden	1173
+5553	glückselig, selig	1765
+5554	nun	1176
+5555	willkommen	589
+5556	Fahrrad	54
+5557	heiß, kochend	1182
+5558	Rechnung	1769
+5559	Abschnitt[Text], Abschnitt, Stück	1773
+5560	berechnen, errechnen, ausrechnen	1776
+5561	einkalkulieren	1776
+5562	rechnen, veranschlagen	1776
+5563	rechnen	1776
+5564	kalkulieren	1776
+5565	Wohnmobil, Campingbus	607
+5566	davonkommen	1787
+5567	es schaffen, zurechtkommen	1787
+5568	Pflaster	1202
+5569	sicherlich, sicher, gewiss	1203
+5570	dass	618
+5571	vielleicht	1792
+5572	jeder, jedermann	1793
+5573	jeder, jedermann	1794
+5574	Schokolade	625
+5575	das heißt, nämlich	1207
+5576	zitieren	1799
+5577	vorladen[Justizwesen], vorladen	1799
+5578	Staatsangehörigkeit	1800
+5579	Mitarbeiter	1803
+5580	erläutern	1810
+5581	Erläuterung	1811
+5582	Kommentar	1811
+5583	Ergänzung	1223
+5584	erschweren	1224
+5585	Kompliment	639
+5586	mitteilen	1227
+5587	bekanntgeben	1227
+5588	verbunden sein	1227
+5589	kommunizieren	1227
+5590	zusammenziehen	1817
+5591	sich konzentrieren	1818
+5592	konjugieren	1829
+5593	kontaktieren	1241
+5594	ständig, dauernd	1838
+5595	herzlich, liebenswürdig	1245
+5596	platzen, aufplatzen	1251
+5597	zerspringen, springen	1251
+5598	krepieren	1251
+5599	von	664
+5600	aus	664
+5601	zu	664
+5602	bei	664
+5603	seit	664
+5604	als, [Essiv]	664
+5605	durch	664
+5606	vorn, vorne	136
+5607	vor, nach vorne	136
+5608	Rechte	138
+5609	verabscheuen	1870
+5610	Diktat	670
+5611	Dialekt	1265
+5612	Tagebuch	1266
+5613	Fehler	1874
+5614	Mangel, Ermangelung	1874
+5615	das Studium abschließen, graduieren, seinen Abschluss machen	1271
+5616	sagen	143
+5617	lesen[Messe]	143
+5618	geradewegs, direkt	1272
+5619	Abhang	1274
+5620	Gefälle	1274
+5621	Abstieg	1274
+5622	Abfahrt[Ski], Abfahrt	1274
+5623	Aussteigen[Fahrzeug], Aussteigen	1274
+5624	Arbeitslose	1276
+5625	Anrichte	1279
+5626	Speisekammer	1279
+5627	verzweifeln	1280
+5628	missfallen	681
+5629	jm Leid tun, bedauern	681
+5630	Dokumentarfilm	1283
+5631	morgen	148
+5632	übermorgen	1286
+5633	überall	1893
+5634	überallhin	1893
+5635	während	696
+5636	außer, mit Ausnahme von, ausgenommen	1898
+5637	ausgezeichnet	1293
+5638	sehr geehrt[Brief], sehr geehrt	1293
+5639	Aufregung, Erregung	1298
+5640	extrovertiert, offen	1301
+5641	Offensichtlichkeit	1913
+5642	Deutlichkeit	1913
+5643	es schaffen	1914
+5644	Belästigung, Störung	1915
+5645	Verdruss	1915
+5646	Feier-, Fest-	1919
+5647	festlich	1919
+5648	endlich	1315
+5649	schließlich	1315
+5650	bis, solange bis	1926
+5651	solange	1926
+5652	bis	722
+5653	bis jetzt	1927
+5654	Lieferant	1932
+5655	vielleicht	730
+5656	bremsen	1935
+5657	zügeln	1935
+5658	gefroren	1330
+5659	im Allgemeinen, gewöhnlich, normalerweise	1331
+5660	Gartenbau	1335
+5661	unten	206
+5662	herunter	206
+5663	hinunter, hinab	206
+5664	umsonst, gratis	763
+5665	Hotel	214
+5666	Identität	769
+5667	ungeduldig	1349
+5668	Einrichtung	1352
+5669	Installation	1352
+5670	Anlage	1352
+5671	plötzlich, unerwartet	1355
+5672	in, innerhalb	220
+5673	an, auf	220
+5674	nach[Richtung], nach	220
+5675	anfangen	1359
+5676	zurück, rückwärts	222
+5677	Kindheit	1962
+5678	schließlich, endlich	1366
+5679	sich verlieben	1368
+5680	Mieter	1967
+5681	alles in allem, kurz und gut, kurz	1371
+5682	schließlich	1371
+5683	also	1371
+5684	eingreifen, einschreiten	1977
+5685	teilnehmen	1977
+5686	anfahren, überfahren	1979
+5687	zusammenstoßen mit	1979
+5688	auffahren auf	1979
+5689	anlegen, investieren	1979
+5690	investieren	1979
+5691	mit einem Amt betrauen	1979
+5692	da hinten	1983
+5693	dort unten	1983
+5694	da hinunter	1983
+5695	da oben, dort oben	1984
+5696	dort hinauf, da hinauf	1984
+5697	dort, da	248
+5698	dorthin, dahin	248
+5699	Lotto	1390
+5700	Lehrerin	1392
+5701	Meisterin	1392
+5702	wäre schön	1995
+5703	Mutterschaft	2002
+5704	Entbindungsstation	2002
+5705	besser	827
+5706	Kantine	829
+5707	Mensa	829
+5708	während	1407
+5709	Vesperbrot	830
+5710	Einzimmerwohnung, Einzimmerappartement	1419
+5711	Moped, Mofa	843
+5712	Stadtmauer	2025
+5713	musikalisch	1423
+5714	einige, welche	1427
+5715	welches	1427
+5716	auch nicht	1429
+5717	nicht einmal	1429
+5718	auch nicht, nicht einmal	2030
+5719	niemand, keiner	307
+5720	trotz	2033
+5721	obwohl	2034
+5722	unser, unsere	861
+5723	sich beschäftigen	1439
+5724	sich kümmern	1439
+5725	heutzutage	2038
+5726	jeder, jedermann	2039
+5727	Ehrlichkeit, Rechtschaffenheit	2041
+5728	jetzt, nun	326
+5729	Organisation	2044
+5730	Veranstaltung	2044
+5731	horizontal, waagerecht	2045
+5732	Durchgang, Übergang	1458
+5733	Durchfahrt	1458
+5734	Durchreise	1458
+5735	Überfahrt	1458
+5736	Textstelle, Textpassage, Absatz[Text]	1458
+5737	verschlechtern	1465
+5738	verschlimmern	1465
+5739	sich verschlechtern	1465
+5740	sich verschlimmern	1465
+5741	sogar	2062
+5742	persönlich	2065
+5743	selbst	2068
+5744	persönlich	2068
+5745	wiegen	1472
+5746	wiegen[Gewicht], schwer sein	1472
+5747	erwägen	1472
+5748	scharf[Essen], scharf	1477
+5749	pikant, würzig	1477
+5750	nachgeben	1479
+5751	da, weil, denn	2071
+5752	Pop-	1494
+5753	Sorge, Besorgnis	2081
+5754	Bedenken	2081
+5755	Wahrscheinlichkeit	2092
+5756	wahrscheinlich	946
+5757	gerade	1519
+5758	ausgerechnet	1519
+5759	wirklich, tatsächlich	1519
+5760	überhaupt	1519
+5761	wenn nur	2101
+5762	als, wenn	959
+5763	Polizei, Polizeipräsidum	1530
+5764	dann, danach	1531
+5765	daher, folglich, also	1531
+5766	Tennisschläger	1534
+5767	Skistock	1534
+5768	selten	1538
+5769	Beschwerde	2119
+5770	Reklamation, Beanstandung	2119
+5771	Wohnsitz	2125
+5772	rechteckig	1543
+5773	Rektor	1544
+5774	berichten	2134
+5775	gewagt, riskant	2143
+5776	Vergleich	2144
+5777	Überprüfung	2144
+5778	Rock[Musik], Rockmusik, Rock	1554
+5779	Kreisverkehr	2150
+5780	salzig	984
+5781	gesalzen	984
+5782	Saldo[Finanzwesen], Saldo	985
+5783	Restbetrag	985
+5784	Soße, Tunke	987
+5785	abschälen, schälen	1569
+5786	ausladen	1571
+5787	abladen	1571
+5788	entladen	1571
+5789	entlasten	1571
+5790	scherzen, spaßen, Späße machen	2156
+5791	Schar	1573
+5792	unkorrekt	2159
+5793	fehlerhaft	2159
+5794	fehlerhaft, unkorrekt	2159
+5795	sich ausstrecken	1585
+5796	sich hinlegen	1585
+5797	obwohl	2162
+5798	ausbeuten	2171
+5799	ausnutzen	2171
+5800	Shampoo	1019
+5801	linke Hand	436
+5802	linke Seite	436
+5803	gesellschaftlich	2178
+5804	sozial	2178
+5805	nur, einzig	1029
+5806	allein, einzeln	1029
+5807	auf, über	1030
+5808	oberhalb	1030
+5809	oben	441
+5810	unter	1033
+5811	unterhalb	1033
+5812	entziehen	2194
+5813	unterschlagen	2194
+5814	subtrahieren	2194
+5815	abziehen	2194
+5816	Spezialisierung	2198
+5817	verschmutzen	1043
+5818	schmutzig machen	1043
+5819	verschieben	1043
+5820	verlegen	1043
+5821	Praktikum, Hospitanz	1619
+5822	drucken	1620
+5823	abziehen[Foto], abziehen	1620
+5824	heute Abend	1052
+5825	derselbe, dieselbe, dasselbe	2202
+5826	Bremslicht	455
+5827	Stoppschild	455
+5828	auf	1062
+5829	über	1062
+5830	oben	462
+5831	hinauf	462
+5832	herauf	462
+5833	Süden	1065
+5834	sein, seine	1066
+5835	ihr, ihre	1066
+5836	Seines	1067
+5837	Ihres	1067
+5838	manchmal, mitunter	2212
+5839	spät	468
+5840	Tennis, Tennisspiel	1082
+5841	terrorisieren	2223
+5842	Tonne[Schifffahrt], Tonne	2226
+5843	Toaster	1643
+5844	Gesamtsumme	1644
+5845	Ruhe, Stille	2229
+5846	versetzen	1649
+5847	verlegen	1649
+5848	umziehen, die Wohnung wechseln	1649
+5849	Übertragung	1651
+5850	Sendung[Rundfunk], Sendung	1651
+5851	Transmission	1651
+5852	durchsichtig	1652
+5853	fortschaffen	1653
+5854	transportieren, befördern	1653
+5855	sich finden	1654
+5856	sich befinden, liegen	1654
+5857	sich fühlen	1654
+5858	sich treffen	1654
+5859	Deines	1101
+5860	ein	490
+5861	eine	491
+5862	einer	2239
+5863	jemand	2239
+5864	Anweisung	1663
+5865	Waggon, Eisenbahnwagen, Wagen	1664
+5866	vegetarisch	2245
+5867	schnell	1666
+5868	wirklich, eigentlich	1116
+5869	gießen, eingießen	1667
+5870	verschütten, schütten	1667
+5871	einzahlen[Geld], einzahlen	1667
+5872	gegen	1668
+5873	nach[Richtung], nach	1668
+5874	in Richtung, in Richtung auf	1668
+5875	gegenüber	1668
+5876	verbieten	1670
+5877	gerne	1678
+5878	euer, Ihr	1128
+5879	WC, Klosett	1131
+5880	sich verbinden	1235
+5881	toll, geil	1922
+5882	Hilfe!	12
+5883	vor	665
+5884	geradeaus	695
+5885	richtig, genau, exact	1906
+5886	erst, zuallererst, zuerst, vor allem	1964
+5887	Sie	787
+5888	lyrisch	1387
