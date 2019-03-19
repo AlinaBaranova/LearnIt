@@ -19,3 +19,14 @@ Important notes not mentioned in the JWKTL Getting Started:
 ## Word2Vec
 * Get word2vec model: http://hlt.isti.cnr.it/wordembeddings/ (word vectors trained with skipgram's word2vec)
 * Install package *gensim* for Python
+
+# Plan of report
+1. Introduction
+2. Related Work / Comparable Tools
+3. Senses (Wiktionary, Langenscheidt and Leo)
+4. Inflected Forms (verbs, nouns, adjectives)
+5. Examples (Tatoeba)
+6. Word Clouds of Similar Words
+7. User Interface
+8. Division of Tasks
+9. Discussion
