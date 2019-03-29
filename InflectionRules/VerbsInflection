@@ -1,0 +1,1854 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class VerbsInflection {
+
+	public static void main(String[] args) {
+
+		File file = new File("B2ListPOS.tsv");
+
+		try {
+			Scanner sc = new Scanner(file);
+
+			//create new file cleaned
+			File verbInfl = new File("B2VerbsInflection.tsv");
+			FileWriter fw = new FileWriter(verbInfl);
+
+			while (sc.hasNextLine()) {
+				//for each line, if it contains the tag 'Verb' , write it in the new file
+
+				String line = sc.nextLine();
+
+				if (line.contains("Verb")) {
+					String[] arr = line.split("\t");
+					String lemma = arr[0];
+
+					String base = lemma.substring(0, lemma.length() - 3);
+					String baseRefl = lemma.substring(0, lemma.length() - 4);
+
+					//INDICATIVO
+					//presente
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Indicativo";
+						String modo = "Presente";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("si")) {
+									fw.write(info + i + "s" + "\t" + "mi " + base + "o" + "\n");
+								} else
+									fw.write(info + info2 + "o" + "\n");
+							}
+
+							if (i == 2) {
+								if (lemma.endsWith("si")) {
+									fw.write(info + i + "s" + "\t" + "ti " + baseRefl + "i" + "\n");
+								} else
+									fw.write(info + info2 + "i" + "\n");
+
+							}
+
+							if (i == 3) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "a" + "\n");
+								else if (lemma.endsWith("arsi")) {
+									fw.write(info + i + "s" + "\t" + "si " + baseRefl + "a" + "\n");
+								} else if (lemma.endsWith("ersi") || lemma.endsWith("irsi")) {
+									fw.write(info + i + "s" + "\t" + "si " + baseRefl + "e" + "\n");
+								} else
+									fw.write(info + info2 + "e" + "\n");
+							}
+
+						} else {
+							if (i == 4) {
+								if (lemma.endsWith("si")) {
+									fw.write(info + "1p" + "\t" + "ci " + baseRefl + "iamo" + "\n");
+								} else
+									fw.write(info + "1p" + "\t" + base + "iamo" + "\n");
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + base;
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ate" + "\n");
+								else if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "ete" + "\n");
+								else if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ite" + "\n");
+								else if (lemma.endsWith("arsi"))
+									fw.write(info + "2p" + "\t" + "vi " + baseRefl + "ate" + "\n");
+								else if (lemma.endsWith("ersi"))
+									fw.write(info + "2p" + "\t" + "vi " + baseRefl + "ete" + "\n");
+								else if (lemma.endsWith("irsi"))
+									fw.write(info + "2p" + "\t" + "vi " + baseRefl + "ite" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + base;
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ano" + "\n");
+								else if (lemma.endsWith("arsi"))
+									fw.write(info + "3p" + "\t" + "si " + baseRefl + "ano" + "\n");
+								else if (lemma.endsWith("ersi") || lemma.endsWith("irsi"))
+									fw.write(info + "3p" + "\t" + "si " + baseRefl + "ono" + "\n");
+								else
+									fw.write(info + info2 + "ono" + "\n");
+
+							}
+
+						}
+
+					}
+
+					//passato prossimo
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Indicativo";
+						String modo = "Passato Prossimo";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + "ho " + base;
+						String infoRefl = i + "s" + "\t" + "mi sono " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+
+							}
+
+							if (i == 2) {
+								info2 = i + "s" + "\t" + "hai " + base;
+								infoRefl = i + "s" + "\t" + "ti sei " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+
+							}
+
+							if (i == 3) {
+								info2 = i + "s" + "\t" + "ha " + base;
+								infoRefl = i + "s" + "\t" + "si è " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + "abbiamo " + base;
+								infoRefl = "1p" + "\t" + "ci siamo " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + "avete " + base;
+								infoRefl = "2p" + "\t" + "vi siete " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + "hanno " + base;
+								infoRefl = "2p" + "\t" + "si sono " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+						}
+
+					}
+
+					//imperfetto
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Indicativo";
+						String modo = "Imperfetto";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						String infoRefl = i + "s" + "\t" + "mi " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "avo" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "evo" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ivo" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "avo" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "evo" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ivo" + "\n");
+							}
+
+							if (i == 2) {
+								infoRefl = i + "s" + "\t" + "ti " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "avi" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "evi" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ivi" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "avi" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "evi" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ivi" + "\n");
+
+							}
+
+							if (i == 3) {
+								infoRefl = i + "s" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ava" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "eva" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "iva" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ava" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "eva" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iva" + "\n");
+
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + base;
+								infoRefl = "1p" + "\t" + "ci " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "avamo" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "evamo" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ivamo" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "avamo" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "evamo" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ivamo" + "\n");
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + base;
+								infoRefl = "2p" + "\t" + "vi " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "avate" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "evate" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ivate" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "avate" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "evate" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ivate" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + base;
+								infoRefl = "3p" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "avano" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "evano" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ivano" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "avano" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "evano" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ivano" + "\n");
+
+							}
+
+						}
+
+					}
+
+					//Trapassato prossimo
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Indicativo";
+						String modo = "Trapassato Prossimo";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + "avevo " + base;
+						String infoRefl = i + "s" + "\t" + "mi ero " + baseRefl;
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+
+							}
+
+							if (i == 2) {
+								info2 = i + "s" + "\t" + "avevi " + base;
+								infoRefl = i + "s" + "\t" + "ti eri " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+
+							}
+
+							if (i == 3) {
+								info2 = i + "s" + "\t" + "aveva " + base;
+								infoRefl = i + "s" + "\t" + "si era " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + "avevamo " + base;
+								infoRefl = "1p" + "\t" + "ci eravamo " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + "avevate " + base;
+								infoRefl = "2p" + "\t" + "vi eravate " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + "avevano " + base;
+								infoRefl = "3p" + "\t" + "si erano " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+						}
+
+					}
+
+					//passato remoto
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Indicativo";
+						String modo = "Passato Remoto";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						String infoRefl = i + "s" + "\t" + "mi " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ai" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "ei" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ii" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ai" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "ei" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ii" + "\n");
+							}
+
+							if (i == 2) {
+								infoRefl = i + "s" + "\t" + "ti " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "asti" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "esti" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "isti" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "asti" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "esti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "isti" + "\n");
+							}
+
+							if (i == 3) {
+								infoRefl = i + "s" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ò" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "ette" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ì" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ò" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "ette" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ì" + "\n");
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + base;
+								infoRefl = "1p" + "\t" + "ci " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ammo" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "emmo" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "immo" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ammo" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "emmo" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "immo" + "\n");
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + base;
+								infoRefl = "2p" + "\t" + "vi " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "aste" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "este" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "iste" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "aste" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "este" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iste" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + base;
+								infoRefl = "3p" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "arono" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "erono" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "irono" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "arono" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "erono" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "irono" + "\n");
+							}
+
+						}
+
+					}
+
+					//futuro semplice 
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Indicativo";
+						String modo = "Futuro Semplice";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						String infoRefl = i + "s" + "\t" + "mi " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "erò" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "erò" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "irò" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "erò" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "erò" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "irò" + "\n");
+							}
+
+							if (i == 2) {
+								infoRefl = i + "s" + "\t" + "ti " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "erai" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "erai" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "irai" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "erai" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "erai" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "irai" + "\n");
+							}
+
+							if (i == 3) {
+								infoRefl = i + "s" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "erà" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "erà" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "irà" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "erà" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "erà" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "irà" + "\n");
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + base;
+								infoRefl = "1p" + "\t" + "ci " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "eremo" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "eremo" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "iremo" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "eremo" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "eremo" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iremo" + "\n");
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + base;
+								infoRefl = "2p" + "\t" + "vi " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "erete" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "erete" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "irete" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "erete" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "erete" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "irete" + "\n");
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + base;
+								infoRefl = "3p" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "eranno" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "eranno" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "iranno" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "eranno" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "eranno" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iranno" + "\n");
+							}
+
+						}
+
+					}
+
+					//Futuro anteriore
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Indicativo";
+						String modo = "Futuro Anteriore";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + "avrò " + base;
+						String infoRefl = i + "s" + "\t" + "mi sarò " + baseRefl;
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+
+							if (i == 2) {
+								info2 = i + "s" + "\t" + "avrai " + base;
+								infoRefl = i + "s" + "\t" + "ti sarai " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+
+							if (i == 3) {
+								info2 = i + "s" + "\t" + "avrà " + base;
+								infoRefl = i + "s" + "\t" + "si sarà " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + "avremo " + base;
+								infoRefl = "1p" + "\t" + "ci saremo " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + "avrete " + base;
+								infoRefl = "2p" + "\t" + "vi sarete " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + "avranno " + base;
+								infoRefl = "3p" + "\t" + "si saranno " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+						}
+
+					}
+
+					//CONGIUNTIVO
+					//presente
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Congiuntivo";
+						String modo = "Presente";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						String infoRefl = i + "s" + "\t" + "mi " + baseRefl;
+
+						if (i < 4) {
+
+							if (lemma.endsWith("are"))
+								fw.write(info + info2 + "i" + "\n");
+
+							if (lemma.endsWith("ere"))
+								fw.write(info + info2 + "a" + "\n");
+
+							if (lemma.endsWith("ire"))
+								fw.write(info + info2 + "a" + "\n");
+
+							if (lemma.endsWith("arsi"))
+								fw.write(info + infoRefl + "i" + "\n");
+
+							if (lemma.endsWith("ersi"))
+								fw.write(info + infoRefl + "a" + "\n");
+
+							if (lemma.endsWith("irsi"))
+								fw.write(info + infoRefl + "a" + "\n");
+
+						} else {
+							if (i == 4) {
+								infoRefl = "1p" + "\t" + "ci " + baseRefl;
+
+								if (lemma.endsWith("are") || lemma.endsWith("ere") || lemma.endsWith("ire"))
+									fw.write(info + "1p" + "\t" + base + "iamo" + "\n");
+								else
+									fw.write(info + infoRefl + "iamo" + "\n");
+
+							}
+
+							if (i == 5) {
+								infoRefl = "2p" + "\t" + "vi " + baseRefl;
+
+								if (lemma.endsWith("are") || lemma.endsWith("ere") || lemma.endsWith("ire"))
+									fw.write(info + "2p" + "\t" + base + "iate" + "\n");
+								else
+									fw.write(info + infoRefl + "iate" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + base;
+								infoRefl = "3p" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ino" + "\n");
+
+								if (lemma.endsWith("ere") || lemma.endsWith("ire"))
+									fw.write(info + info2 + "ano" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ino" + "\n");
+
+								if (lemma.endsWith("ersi") || lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ano" + "\n");
+
+							}
+
+						}
+
+					}
+
+					//passato
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Congiuntivo";
+						String modo = "Passato";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + "abbia " + base;
+						String infoRefl = i + "s" + "\t" + "mi sia " + baseRefl;
+
+						if (i < 4) {
+
+							if (lemma.endsWith("are"))
+								fw.write(info + info2 + "ato" + "\n");
+
+							if (lemma.endsWith("ere"))
+								fw.write(info + info2 + "uto" + "\n");
+
+							if (lemma.endsWith("ire"))
+								fw.write(info + info2 + "ito" + "\n");
+
+							if (lemma.endsWith("arsi"))
+								fw.write(info + infoRefl + "ato" + "\n");
+
+							if (lemma.endsWith("ersi"))
+								fw.write(info + infoRefl + "uto" + "\n");
+
+							if (lemma.endsWith("irsi"))
+								fw.write(info + infoRefl + "ito" + "\n");
+
+						} else {
+							if (i == 4) {
+
+								info2 = "1p" + "\t" + "abbiamo " + base;
+								infoRefl = "1p" + "\t" + "ci siamo " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + "abbiate " + base;
+								infoRefl = "2p" + "\t" + "vi siate " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + "abbiano " + base;
+								infoRefl = "3p" + "\t" + "si siano " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+							}
+
+						}
+
+					}
+
+					//imperfetto
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Congiuntivo";
+						String modo = "Imperfetto";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						String infoRefl = i + "s" + "\t" + "mi " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "assi" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "essi" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "issi" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "assi" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "essi" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "issi" + "\n");
+							}
+							if (i == 2) {
+								{
+
+									infoRefl = i + "s" + "\t" + "ti " + baseRefl;
+
+									if (lemma.endsWith("are"))
+										fw.write(info + info2 + "assi" + "\n");
+									if (lemma.endsWith("ere"))
+										fw.write(info + info2 + "essi" + "\n");
+									if (lemma.endsWith("ire"))
+										fw.write(info + info2 + "issi" + "\n");
+
+									if (lemma.endsWith("arsi"))
+										fw.write(info + infoRefl + "assi" + "\n");
+									if (lemma.endsWith("ersi"))
+										fw.write(info + infoRefl + "essi" + "\n");
+									if (lemma.endsWith("irsi"))
+										fw.write(info + infoRefl + "issi" + "\n");
+								}
+							}
+							if (i == 3) {
+								{
+									infoRefl = i + "s" + "\t" + "si " + baseRefl;
+
+									if (lemma.endsWith("are"))
+										fw.write(info + info2 + "asse" + "\n");
+									if (lemma.endsWith("ere"))
+										fw.write(info + info2 + "esse" + "\n");
+									if (lemma.endsWith("ire"))
+										fw.write(info + info2 + "isse" + "\n");
+
+									if (lemma.endsWith("arsi"))
+										fw.write(info + infoRefl + "asse" + "\n");
+									if (lemma.endsWith("ersi"))
+										fw.write(info + infoRefl + "esse" + "\n");
+									if (lemma.endsWith("irsi"))
+										fw.write(info + infoRefl + "isse" + "\n");
+								}
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + base;
+								infoRefl = "1p" + "\t" + "ci " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "assimo" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "essimo" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "issimo" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "assimo" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "essimo" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "issimo" + "\n");
+
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + base;
+								infoRefl = "2p" + "\t" + "vi " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "aste" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "este" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "iste" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "aste" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "este" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iste" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + base;
+								infoRefl = "3p" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "assero" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "essero" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "issero" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "assero" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "essero" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "issero" + "\n");
+							}
+
+						}
+
+					}
+
+					//trapassato
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Congiuntivo";
+						String modo = "Trapassato";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + "avessi " + base;
+						String infoRefl = i + "s" + "\t" + "mi fossi " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+
+							}
+							if (i == 2) {
+								infoRefl = i + "s" + "\t" + "ti fossi " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+
+							if (i == 3) {
+								info2 = info2.replace("avessi", "avesse");
+								infoRefl = i + "s" + "\t" + "si fosse " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + "avessimo " + base;
+								infoRefl = "1p" + "\t" + "ci fossimo " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + "aveste " + base;
+								infoRefl = "2p" + "\t" + "vi foste " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + "avessero " + base;
+								infoRefl = "3p" + "\t" + "si fossero " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+						}
+
+					}
+
+					//CONDIZIONALE
+					//presente
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Condizionale";
+						String modo = "Presente";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						String infoRefl = i + "s" + "\t" + "mi " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "erei" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "erei" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "irei" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "erei" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "erei" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "irei" + "\n");
+
+							}
+							if (i == 2) {
+								{
+									infoRefl = i + "s" + "\t" + "ti " + baseRefl;
+
+									if (lemma.endsWith("are"))
+										fw.write(info + info2 + "eresti" + "\n");
+									if (lemma.endsWith("ere"))
+										fw.write(info + info2 + "eresti" + "\n");
+									if (lemma.endsWith("ire"))
+										fw.write(info + info2 + "iresti" + "\n");
+
+									if (lemma.endsWith("arsi"))
+										fw.write(info + infoRefl + "eresti" + "\n");
+									if (lemma.endsWith("ersi"))
+										fw.write(info + infoRefl + "eresti" + "\n");
+									if (lemma.endsWith("irsi"))
+										fw.write(info + infoRefl + "iresti" + "\n");
+								}
+							}
+							if (i == 3) {
+								{
+									infoRefl = i + "s" + "\t" + "si " + baseRefl;
+
+									if (lemma.endsWith("are"))
+										fw.write(info + info2 + "erebbe" + "\n");
+									if (lemma.endsWith("ere"))
+										fw.write(info + info2 + "erebbe" + "\n");
+									if (lemma.endsWith("ire"))
+										fw.write(info + info2 + "irebbe" + "\n");
+
+									if (lemma.endsWith("arsi"))
+										fw.write(info + infoRefl + "erebbe" + "\n");
+									if (lemma.endsWith("ersi"))
+										fw.write(info + infoRefl + "erebbe" + "\n");
+									if (lemma.endsWith("irsi"))
+										fw.write(info + infoRefl + "irebbe" + "\n");
+								}
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + base;
+								infoRefl = "1p" + "\t" + "ci " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "eremmo" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "eremmo" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "iremmo" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "eremmo" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "eremmo" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iremmo" + "\n");
+
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + base;
+								infoRefl = "2p" + "\t" + "vi " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ereste" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "ereste" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ireste" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ereste" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "ereste" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ireste" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + base;
+								infoRefl = "3p" + "\t" + "si " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "erebbero" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "erebbero" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "irebbero" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "erebbero" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "erebbero" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "irebbero" + "\n");
+							}
+
+						}
+
+					}
+
+					//passato
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Condizionale";
+						String modo = "Passato";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + "avrei " + base;
+						String infoRefl = i + "s" + "\t" + "mi sarei " + baseRefl;
+
+						if (i < 4) {
+							if (i == 1) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+							if (i == 2) {
+								info2 = i + "s" + "\t" + "avresti " + base;
+								infoRefl = i + "s" + "\t" + "ti saresti " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+
+							if (i == 3) {
+								info2 = i + "s" + "\t" + "avrebbe " + base;
+								infoRefl = i + "s" + "\t" + "si sarebbe " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ato" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uto" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ito" + "\n");
+							}
+
+						} else {
+							if (i == 4) {
+								info2 = "1p" + "\t" + "avremmo " + base;
+								infoRefl = "1p" + "\t" + "ci saremmo " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 5) {
+								info2 = "2p" + "\t" + "avreste " + base;
+								infoRefl = "2p" + "\t" + "vi sareste " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+							if (i == 6) {
+								info2 = "3p" + "\t" + "avrebbero " + base;
+								infoRefl = "3p" + "\t" + "si sarebbero " + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ato" + "\n");
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "uto" + "\n");
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ito" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ati" + "\n");
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "uti" + "\n");
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "iti" + "\n");
+
+							}
+
+						}
+
+					}
+
+					//IMPERATIVO
+					//presente
+					for (int i = 1; i < 7; i++) {
+						String tempo = "Imperativo";
+						String modo = "Presente";
+						String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+						String info2 = i + "s" + "\t" + base;
+						String infoRefl = i + "s" + "\t" + baseRefl;
+
+						if (i < 4) {
+							if (i == 2) {
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "a" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "i" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "i" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "a" + "ti" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "i" + "ti" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "i" + "ti" + "\n");
+
+							}
+						} else {
+							if (i == 5) {
+								info2 = "2p" + "\t" + base;
+								infoRefl = "2p" + "\t" + baseRefl;
+
+								if (lemma.endsWith("are"))
+									fw.write(info + info2 + "ate" + "\n");
+
+								if (lemma.endsWith("ere"))
+									fw.write(info + info2 + "ete" + "\n");
+
+								if (lemma.endsWith("ire"))
+									fw.write(info + info2 + "ite" + "\n");
+
+								if (lemma.endsWith("arsi"))
+									fw.write(info + infoRefl + "ate" + "vi" + "\n");
+
+								if (lemma.endsWith("ersi"))
+									fw.write(info + infoRefl + "ete" + "vi" + "\n");
+
+								if (lemma.endsWith("irsi"))
+									fw.write(info + infoRefl + "ite" + "vi" + "\n");
+							}
+
+						}
+
+					}
+
+					//INFINITO
+					//presente
+
+					String tempo = "Infinito";
+					String modo = "Presente";
+					String info = lemma + "\t" + tempo + "\t" + modo + "\t";
+
+					fw.write(info + "/" + "\t" + lemma + "\n");
+
+					//passato
+
+					tempo = "Infinito";
+					modo = "Passato";
+					info = lemma + "\t" + tempo + "\t" + modo + "\t" + "/" + "\t" + "avere ";
+					String infoRefl = lemma + "\t" + tempo + "\t" + modo + "\t" + "/" + "\t" + "essersi ";
+
+					if (lemma.endsWith("are"))
+						fw.write(info + base + "ato" + "\n");
+
+					if (lemma.endsWith("ere"))
+						fw.write(info + base + "uto" + "\n");
+
+					if (lemma.endsWith("ire"))
+						fw.write(info + base + "ito" + "\n");
+
+					if (lemma.endsWith("arsi"))
+						fw.write(infoRefl + baseRefl + "ato" + "\n");
+
+					if (lemma.endsWith("ersi"))
+						fw.write(infoRefl + baseRefl + "uto" + "\n");
+
+					if (lemma.endsWith("irsi"))
+						fw.write(infoRefl + baseRefl + "ito" + "\n");
+
+					//GERUNDIO
+					//presente
+
+					tempo = "Gerundio";
+					modo = "Presente";
+					info = lemma + "\t" + tempo + "\t" + modo + "\t" + "/" + "\t";
+
+					if (lemma.endsWith("are"))
+						fw.write(info + base + "ando" + "\n");
+
+					if (lemma.endsWith("ere"))
+						fw.write(info + base + "endo" + "\n");
+
+					if (lemma.endsWith("ire"))
+						fw.write(info + base + "endo" + "\n");
+
+					if (lemma.endsWith("arsi"))
+						fw.write(info + baseRefl + "andosi" + "\n");
+
+					if (lemma.endsWith("ersi"))
+						fw.write(info + baseRefl + "endosi" + "\n");
+
+					if (lemma.endsWith("irsi"))
+						fw.write(info + baseRefl + "endosi" + "\n");
+
+					//passato
+
+					tempo = "Gerundio";
+					modo = "Passato";
+					info = lemma + "\t" + tempo + "\t" + modo + "\t" + "/" + "\t" + "avendo ";
+					infoRefl = lemma + "\t" + tempo + "\t" + modo + "\t" + "/" + "\t" + "essendosi ";
+
+					if (lemma.endsWith("are"))
+						fw.write(info + base + "ato" + "\n");
+
+					if (lemma.endsWith("ere"))
+						fw.write(info + base + "uto" + "\n");
+
+					if (lemma.endsWith("ire"))
+						fw.write(info + base + "ito" + "\n");
+
+					if (lemma.endsWith("arsi"))
+						fw.write(infoRefl + baseRefl + "ato" + "\n");
+
+					if (lemma.endsWith("ersi"))
+						fw.write(infoRefl + baseRefl + "uto" + "\n");
+
+					if (lemma.endsWith("irsi"))
+						fw.write(infoRefl + baseRefl + "ito" + "\n");
+
+				}
+
+			}
+
+			sc.close();
+			fw.close();
+
+			System.out.println("running");
+		}
+
+		catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+}
