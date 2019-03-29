@@ -20,6 +20,10 @@ Important notes not mentioned in the JWKTL Getting Started:
 * Get word2vec model: http://hlt.isti.cnr.it/wordembeddings/ (word vectors trained with skipgram's word2vec)
 * Install package *gensim* for Python
 
+## Run the project in Eclipse
+* Install MySQL Java Connector (https://dev.mysql.com/downloads/connector/j/8.0.html). Make sure to create a lib folder in the project hierarchy in which the .jar  'mysql-connector-java-8.0.13.jar' has to be placed.
+* Project Properties>GWT>JavaBuildPath>Add Jars, then select the lib folder from the project hierarchy and add it.
+
 # Plan of report
 1. Introduction
 2. Related Work / Comparable Tools
