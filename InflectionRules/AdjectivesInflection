@@ -1,0 +1,72 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class AdjectivesInflection {
+
+	public static void main(String[] args) {
+
+		File file = new File("B2ListPOS.tsv");
+
+		try {
+			Scanner sc = new Scanner(file);
+
+			//create new file cleaned
+			File adjInfl = new File("B2AdjectivesInflection.tsv");
+			FileWriter fw = new FileWriter(adjInfl);
+
+			while (sc.hasNextLine()) {
+				//for each line, if it contains the tag 'Adjektiv' , write it in the new file
+
+				String line = sc.nextLine();
+
+				if (line.contains("Adjektiv")) {
+
+					String[] arr = line.split("\t");
+					String lemma = arr[0];
+					String info = arr[1];
+
+					String base = lemma.substring(0, lemma.length() - 1);
+
+					if (lemma.endsWith("co")) {
+						lemma = lemma;
+						info = base + "hi" + "\t" + base + "a" + "\t" + base + "he";
+						line = lemma + "\t" + info;
+					} else if (lemma.endsWith("go")) {
+						lemma = lemma;
+						info = base + "hi" + "\t" + base + "a" + "\t" + base + "he";
+						line = lemma + "\t" + info;
+					} else if (lemma.endsWith("o")) {
+
+						lemma = lemma;
+						info = base + "i" + "\t" + base + "a" + "\t" + base + "e";
+						line = lemma + "\t" + info;
+
+					} else if (lemma.endsWith("e")) {
+						lemma = lemma;
+						info = base + "i" + "\t" + base + "e" + "\t" + base + "i";
+						line = lemma + "\t" + info;
+					} else {
+						lemma = lemma;
+						info = lemma + "\t" + lemma + "\t" + lemma;
+						line = lemma + "\t" + info;
+
+					}
+
+					fw.write(line + "\n");
+
+				}
+
+			}
+
+			fw.close();
+			sc.close();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+}
