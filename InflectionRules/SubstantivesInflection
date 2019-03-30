@@ -71,11 +71,6 @@ public class SubstGenderInflection {
 						int end = lemma.length() - 1;
 						plural = lemma.substring(start, end) + "i";
 					}
-					//if lemma ends with à -->à
-					else if (lemma.endsWith("à"))
-					{}
-					//if lemma ends with ice -->i
-					//if lemma ends with essa -->esse
 					//if lemma ends with ore-->ori
 					//if the lemma is a month
 					else if (lemma.equalsIgnoreCase("gennaio") || lemma.equalsIgnoreCase("febbraio")
@@ -157,7 +152,14 @@ public class SubstGenderInflection {
 							plural = lemma.substring(start, lemma.length() - 1) + "i";
 						}
 
-					} else {
+					}
+					//if lemma ends with à -->à
+					else if (lemma.endsWith("à"))
+					{}
+					//if lemma ends with ice -->i
+					//if lemma ends with essa -->esse
+					
+					else {
 						plural = lemma;
 					}
 
