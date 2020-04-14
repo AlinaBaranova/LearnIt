@@ -1,37 +1,18 @@
 # LearnIt
-Learners dictionary of Italian for German speakers
 
-## Parsing Wiktionary Dump (with JWKTL)
-* JWKTL Getting Started: https://dkpro.github.io/dkpro-jwktl/documentation/getting-started/ - main guide
+This learners dictionary of Italian is aimed at German speakers whose level of Italian spans from A1 to B2, according to the Common European Framework of Reference for Languages (CEFR). The tool provides the users with an opportunity of consulting level-specific vocabulary lists, as well as enables searching particular words from these lists. Both German-Italian and Italian-German directions of search are possible. Every dictionary entry contains the word's part of speech, senses, information about the word's inflection (when available), usage examples (when available) and a word cloud of similar words (when available).
 
-Links (use them instead the ones in the guide):
-* Oracle Berkeley DB Java Edition: download from here https://www.oracle.com/technetwork/database/database-technologies/berkeleydb/downloads/index.html
-* German Wiktionary dump: https://dumps.wikimedia.org/dewiktionary/latest/, file *dewiktionary-latest-pages-articles.xml.bz2*
+### Resources
 
-Important notes not mentioned in the JWKTL Getting Started:
-* create a Maven project
-* add JWKTL dependency to your pom.xml file: https://dkpro.github.io/dkpro-jwktl/
+The CEFR is the source for the lists of level-specific vocabulary. Word senses were extracted from Wiktionary, and example sentences were taken from the Tatoeba. Word clouds were generated using Word2Vec and a Python package WordCloud.
 
-## TreeTagger
-* Follow the guide on http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ to download TreeTagger
-* Install package *treetaggerwrapper* for Python
+### Languages used
 
-## Word2Vec
-* Get word2vec model: http://hlt.isti.cnr.it/wordembeddings/ (word vectors trained with skipgram's word2vec)
-* Install package *gensim* for Python
+Alina Baranova:
+- Java: extracting senses from Wiktionary with the JWKTL library
+- Python: retrieving examples from the corpus Tatoeba and assigning levels to them, extracting words that have a high degree of similarity with words in the vocabulary lists using Word2Vec, generating word clouds of these similar words with WordCloud
 
-## Run the project in Eclipse
-* Install MySQL Java Connector (https://dev.mysql.com/downloads/connector/j/8.0.html). Make sure to create a lib folder in the project hierarchy in which the .jar  'mysql-connector-java-8.0.13.jar' has to be placed.
-* Project Properties>GWT>JavaBuildPath>Add Jars, then select the lib folder from the project hierarchy and add it.
-* database on MySQL
-
-# Plan of report
-1. Introduction
-2. Related Work / Comparable Tools
-3. Senses (Wiktionary, Langenscheidt and Leo)
-4. Inflected Forms (verbs, nouns, adjectives)
-5. Examples (Tatoeba)
-6. Word Clouds of Similar Words
-7. User Interface
-8. Division of Tasks
-9. Discussion
+Marta Berardi:
+- Java: creating inflectional rules for verbs, nouns and adjectives, frontend/client-side coding (using GWT)
+- SQL: creating an SQL database that includes information about words, word senses, inflections, examples annd word clouds
+- HTML & CSS: interface (pages of the website)
