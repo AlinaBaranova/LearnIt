@@ -13,6 +13,6 @@ Alina Baranova:
 - Python: retrieving examples from the corpus Tatoeba and assigning levels to them, extracting words that have a high degree of similarity with words in the vocabulary lists using Word2Vec, generating word clouds of these similar words with WordCloud
 
 Marta Berardi:
-- Java: creating inflectional rules for verbs, nouns and adjectives, frontend/client-side coding (using GWT)
-- SQL: creating an SQL database that includes information about words, word senses, inflections, examples annd word clouds
-- HTML & CSS: interface (pages of the website)
+- Java: creating inflectional rules for verbs, nouns and adjectives, frontend/backend coding (using GWT)
+- SQL: creating an SQL database that includes information about words, word senses, inflections, examples and word clouds
+- HTML & CSS: website frontend
